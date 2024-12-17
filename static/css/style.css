@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+
+}
+
+.recipe__mainimg {
+    width: 100%;          
+    height: auto;         
+    display: block;       
+}
+.recipe__h2 {
+    color: green;
+    text-align: center;
+}
+.recipe__title {
+    color: green;
+    text-align: center;
+}
+.recipe__accentbg{
+    background-color: rgb(213, 241, 213);
+    border-radius: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.recipe__accentbg table {
+    background: transparent;
+    border: none;
+    border-collapse: collapse;
+}
+.recipe__p{
+    text-align: center;
+}
+
+#preptime__p{
+    white-space: pre;
+}
+
