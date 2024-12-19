@@ -1,23 +1,33 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, request
 
 app = Flask(__name__, template_folder = "templates")
 
-test_string = "Es funktioniert!"
+## Example Data
+recipe_img = "/static/images/pizza.jpg"
+recipe_name = "Pizza"
+preparation_time = "120"
+cooking_time = "15"
+servings = 2
+ingredients = {"125 ml": "Wasser", "1/2 Würfel": "Hefe", "1 EL": "Öl"}
+instructions = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime incidunt voluptatum, laborum dolore aut eligendi nesciunt labore unde autem recusandae pariatur, iusto voluptatem accusantium officiis dignissimos possimus quae. Non, at?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime incidunt voluptatum, laborum dolore aut eligendi nesciunt labore unde autem recusandae pariatur, iusto voluptatem accusantium officiis dignissimos possimus quae. Non, at?"
+rating = 5
 
 @app.route("/")
 def index():
-    return render_template("index.html", test_string = test_string)
+    return render_template("index.html")
+
+
+@app.route("/hinzufuegen", methods = ["GET", "POST"])
+def add_recipe():
+    if request.method == "POST":
+        recipe_name = request.form["recipe_name"]
+        return recipe_name
+    else:
+        return render_template("add_recipe.html")
 
 @app.route("/rezepte/1")
 def recipe():
-    recipe_img = "/static/images/pizza.jpg"
-    recipe_name = "Pizza"
-    preparation_time = "120"
-    cooking_time = "15"
-    servings = 2
-    ingredients = {"125 ml": "Wasser", "1/2 Würfel": "Hefe", "1 EL": "Öl"}
-    instructions = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime incidunt voluptatum, laborum dolore aut eligendi nesciunt labore unde autem recusandae pariatur, iusto voluptatem accusantium officiis dignissimos possimus quae. Non, at?"
-    rating = 5
+    
 
     return render_template("recipe.html", 
                            recipe_img = recipe_img,

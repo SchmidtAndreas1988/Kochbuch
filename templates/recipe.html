@@ -1,7 +1,11 @@
+
 {% extends "base.html" %}
 {% block content %}
-    <img class="recipe__mainimg" src="{{ recipe_img }}">  
+    <img class="recipe__mainimg" src="{{ recipe_img }}">
+    <br/>
+    <br/> 
     <h1 class = "recipe__title">{{ recipe_name }}</h1>
+    <br/>
     <div class="recipe__accentbg">
         <p id="preptime__p" class="recipe__p"><strong>Vorbereitung:</strong> {{ preparation_time }} Min    <strong>Zubereitung:</strong> {{ cooking_time }} Min    <strong>Portionen:</strong> {{ servings }}</p>
 
@@ -10,10 +14,10 @@
     <div class="recipe__accentbg">
     <h2 class="recipe__h2">Zutaten</h2>
     
-        <table class="recipe__accentbg">
+        <table class="recipe__accentbg recipe__table">
         {% for key, value in ingredients.items() %}
         <tr>
-            <td>{{ key }}</td>
+            <td> {{ "\u2713" + "   " + key }}</td>
             <td>{{ value }}</td>
         </tr>
         {% endfor %}

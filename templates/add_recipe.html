@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <br/>
+    <h1>Neues Rezept hinzufügen</h1>
+    <br/>
+
+    <form action="{{ url_for('add_recipe') }}" method="post">
+        <label for="recipe_name">Name:</label>
+        <input type="text" id="recipe_name" name="recipe_name" placeholder="Name des Rezepts">
+        <br/>
+
+        <label for="recipe_category">Kategorie:</label>
+            <input type="radio" id="cooking" value="cooking" name="recipe_category">
+            <label for="cooking">Kochen</label>
+            <input type="radio" id="baking" value="baking" name="recipe_category">
+            <label for="baking">Backen</label>
+            <input type="radio" id="dessert" value="dessert" name="recipe_category">
+            <label for="dessert">Dessert</label>
+            <br/>
+        
+        <label for="instructions">Zubereitung:</label>
+        <textarea id="instructions" rows="3" cols="20"></textarea>
+        <br/>
+        <label for="recipe_img">Bild:</label>
+        <input type="file" id="recipe_img" accept="image/png, image/jpeg">
+        <br>
+        <input type="submit">
+
+    </form>
+
+    
+{% endblock %}

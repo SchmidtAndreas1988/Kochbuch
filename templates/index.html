@@ -1,6 +1,8 @@
 
 {% extends "base.html" %}
 {% block content %}
-    <h1>Hier plant die Familie Schmidt ihre Aktivitäten</h1>
-    <p>{{ test_string }}</p>
+    <h1>Homepage</h1>
+    <br/>
+    <a href="{{ url_for('recipe') }}">Demorezept</a>
+    <a href="{{ url_for('add_recipe') }}">Rezept hinzufügen</a>
 {% endblock %}
