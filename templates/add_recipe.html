@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="add__recipe">
     <br/>
     <h1>Neues Rezept hinzufügen</h1>
     <br/>
 
+    <div class="recipe__accentbg">
     <form action="{{ url_for('add_recipe') }}" method="post">
         <label for="recipe_name">Name:</label>
         <input type="text" id="recipe_name" name="recipe_name" placeholder="Name des Rezepts">
@@ -18,8 +20,17 @@
             <label for="dessert">Dessert</label>
             <br/>
         
+        <label for="preparation_time">Vorbereitung in Minuten:</label>
+        <input type="number" id="preparation_time" name="preparation_time"><br/><br/>
+        
+        <label for="cooking_time">Zubereitung in Minuten:</label>
+        <input type="number" id="cooking_time" name="cooking_time"><br/><br/>
+
+        <label for="servings">Anzahl Portionen:</label>
+        <input type="number" id="servings" name="servings"><br/><br/>
+        
         <label for="instructions">Zubereitung:</label>
-        <textarea id="instructions" rows="3" cols="20"></textarea>
+        <textarea id="instructions" rows="6" cols="20" name="instructions"></textarea>
         <br/>
         <label for="recipe_img">Bild:</label>
         <input type="file" id="recipe_img" accept="image/png, image/jpeg">
@@ -27,6 +38,7 @@
         <input type="submit">
 
     </form>
+    </div>
 
-    
+</div>
 {% endblock %}

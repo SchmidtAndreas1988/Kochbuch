@@ -1,18 +1,19 @@
 
 {% extends "base.html" %}
 {% block content %}
+<div class="recipe">
     <img class="recipe__mainimg" src="{{ recipe_img }}">
-    <br/>
+   
     <br/> 
-    <h1 class = "recipe__title">{{ recipe_name }}</h1>
+    <h1>{{ recipe_name }}</h1>
     <br/>
     <div class="recipe__accentbg">
-        <p id="preptime__p" class="recipe__p"><strong>Vorbereitung:</strong> {{ preparation_time }} Min    <strong>Zubereitung:</strong> {{ cooking_time }} Min    <strong>Portionen:</strong> {{ servings }}</p>
+        <p id="preptime__p"><strong>Vorbereitung:</strong> {{ preparation_time }} Min    <strong>Zubereitung:</strong> {{ cooking_time }} Min    <strong>Portionen:</strong> {{ servings }}</p>
 
     </div>
     <br/>
     <div class="recipe__accentbg">
-    <h2 class="recipe__h2">Zutaten</h2>
+    <h2>Zutaten</h2>
     
         <table class="recipe__accentbg recipe__table">
         {% for key, value in ingredients.items() %}
@@ -25,15 +26,17 @@
     </div>
     <br/>
     <div class="recipe__accentbg">
-        <h2 class="recipe__h2">Anleitung</h2>
-        <p class="recipe__p">{{ instructions }}</p>
+        <h2>Anleitung</h2>
+        <p>{{ instructions }}</p>
     </div>
     <br/>
-    <h2 class="recipe__h2">Bewertung</h2>
-    <p class="recipe__p">{{ "\u2B50" * rating }}</p>
+    {% if rating %}
+        <h2>Bewertung</h2>
+        <p>{{ "\u2B50" * rating }}</p>
+    {% endif %}
     <br/>
     <br/>
- 
+ </div>
 {% endblock %}
 
 

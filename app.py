@@ -21,7 +21,25 @@ def index():
 def add_recipe():
     if request.method == "POST":
         recipe_name = request.form["recipe_name"]
-        return recipe_name
+        preparation_time = request.form["preparation_time"]
+        cooking_time = request.form["cooking_time"]
+        servings = request.form["servings"]
+        instructions = request.form["instructions"]
+        rating = ""
+
+        # placeholder
+        ingredients = {"125 ml": "Wasser", "1/2 Würfel": "Hefe", "1 EL": "Öl"}
+
+        return render_template("recipe.html", 
+                           # recipe_img = recipe_img,
+                           recipe_name = recipe_name, 
+                           preparation_time = preparation_time,
+                           cooking_time = cooking_time,
+                           servings = servings,
+                           ingredients = ingredients,
+                           instructions = instructions,
+                           rating = rating
+                           )
     else:
         return render_template("add_recipe.html")
 
