@@ -1,17 +1,94 @@
 :root {
-    --mainbrandcolor: rgb(87, 160, 63);
-    --lightaccentcolor: rgb(204, 240, 203);
-    --mainpfont: "Arial";
-    --mainhfont: "Arial";
+    --mainbrandcolor: rgb(78, 172, 91);
+    --lightaccentcolor: rgb(199, 233, 203);
+    --mainpfont: "Noto Sans";
+    --mainhfont: "Noto Sans";
 }
 
 *{
     padding: 0;
     margin: 0;
     font-family: var(--mainpfont);
+    
 
 
 }
+h1 {
+    color: var(--mainbrandcolor);
+    font-size: 2.5em;
+    padding: 5px;
+    font-family: var(--mainhfont);
+}
+
+h2 {
+    color: var(--mainbrandcolor);
+  
+    padding: 5px;
+    font-family: var(--mainhfont);
+}
+
+button{
+    background-color: var(--mainbrandcolor);
+    border: none;
+    /* border-top-color: black; */
+    color: white;
+    border-radius: 2px;
+    
+    padding: 6px;
+    box-shadow: 3px 3px 4px grey;
+   
+}
+input[type="text"] {
+    border: none;
+    /* border-top-color: black; */
+    color: black;
+    border-radius: 2px;
+    width: 300px;
+    padding: 5px;
+    margin: 6px;
+    box-shadow: 4px 4px 5px grey;
+    /* border-style: 2px solid black; */
+}
+
+input[type="number"] {
+    border: none;
+    /* border-top-color: black; */
+    color: black;
+    border-radius: 2px;
+    width: 150px;
+    padding: 5px;
+    margin: 6px;
+    box-shadow: 4px 4px 5px grey;
+    /* border-style: 2px solid black; */
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border: none;
+    /* border-top-color: black; */
+    color: black;
+    border-radius: 2px;
+  
+    padding: 5px;
+    margin: 6px;
+    box-shadow: 1px 1px 2px rgb(79, 79, 79);
+    outline: none;
+    margin-left: 8px;
+    /* padding-left: -4px; */
+    /* border-style: 2px solid black; */
+}
+textarea {
+    border: none;
+    /* border-top-color: black; */
+    color: black;
+    border-radius: 2px;
+    width: 500px;
+    padding: 5px;
+    margin: 6px;
+    box-shadow: 3px 3px 4px grey;
+    outline: none;
+    /* border-style: 2px solid black; */
+}
+
 .recipe{
     text-align: center;
 }
@@ -29,19 +106,7 @@
     
     background-color: var(--lightaccentcolor);
 }
-h1 {
-    color: var(--mainbrandcolor);
-    font-size: 2.5em;
-    padding: 5px;
-    font-family: var(--mainhfont);
-}
 
-h2 {
-    color: var(--mainbrandcolor);
-  
-    padding: 5px;
-    font-family: var(--mainhfont);
-}
 
 .recipe__mainimg {
     width: 100%;          
@@ -53,10 +118,14 @@ h2 {
 
 .recipe__accentbg{
     background-color: var(--lightaccentcolor);
-    border-radius: 12px;
+    border-radius: 2px;
     margin-left: 20px;
     margin-right: 20px;
     padding: 10px;
+    box-shadow: 2px 2px 10px grey;
+    
+
+    
 }
 .recipe__table {
     margin-left: auto;
@@ -117,4 +186,8 @@ h2 {
 }
 #navbar__img{
     padding: 8px;
+}
+
+#ingredient_unit{
+    width: 50px;
 }

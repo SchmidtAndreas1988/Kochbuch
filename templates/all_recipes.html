@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Alle Rezepte</h1>
+    <br/>
+    {% for our_recipe in our_recipes %}
+        {{ our_recipe.title }}<br/>
+    {% endfor %}    
+{% endblock %}

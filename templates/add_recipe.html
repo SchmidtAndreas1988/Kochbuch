@@ -6,12 +6,15 @@
     <br/>
 
     <div class="recipe__accentbg">
+        <!-- <div style="background-color: black; ">
+            <br/>
+        </div> -->
     <form action="{{ url_for('add_recipe') }}" method="post">
-        <label for="recipe_name">Name:</label>
-        <input type="text" id="recipe_name" name="recipe_name" placeholder="Name des Rezepts">
+        <!-- <label for="title">Name:</label> -->
+        <input type="text" id="title" name="title" placeholder="Name">
         <br/>
 
-        <label for="recipe_category">Kategorie:</label>
+        <!-- <label for="recipe_category">Kategorie:</label> -->
             <input type="radio" id="cooking" value="cooking" name="recipe_category">
             <label for="cooking">Kochen</label>
             <input type="radio" id="baking" value="baking" name="recipe_category">
@@ -20,25 +23,35 @@
             <label for="dessert">Dessert</label>
             <br/>
         
-        <label for="preparation_time">Vorbereitung in Minuten:</label>
-        <input type="number" id="preparation_time" name="preparation_time"><br/><br/>
+        <!-- <label for="prep_time">Vorbereitung in Minuten:</label> -->
+        <input type="number" id="prep_time" name="prep_time" placeholder="Vorbereitung in Min">
         
-        <label for="cooking_time">Zubereitung in Minuten:</label>
-        <input type="number" id="cooking_time" name="cooking_time"><br/><br/>
+        
+        <input type="number" id="cooking_time" name="cooking_time" placeholder="Zubereitung in Min">
 
-        <label for="servings">Anzahl Portionen:</label>
-        <input type="number" id="servings" name="servings"><br/><br/>
         
-        <label for="instructions">Zubereitung:</label>
-        <textarea id="instructions" rows="6" cols="20" name="instructions"></textarea>
+        <input type="number" id="servings" name="servings" placeholder="Anzahl Portionen"><br/><br/>
+        
+        <div id="recipe_ingredient_table">
+            <table>
+                <tr>
+                    <td><input type="number" id="ingredient_amount" name="ingredient_amount" placeholder="Anzahl"></td>
+                    <td><input type="text" id="ingredient_unit" name="ingredient_unit" placeholder="Einheit"></td>
+                    <td><input type="text" id="ingredient_name" name="ingredient_name" placeholder="Zutat"></td>
+                    <td><button type="button" onclick="addIngredientRow()">+</button></td>
+                </tr>
+            </table>
+        </div>
+        <textarea id="instructions" rows="6" cols="20" name="instructions" placeholder="Zubereitung"></textarea>
         <br/>
         <label for="recipe_img">Bild:</label>
         <input type="file" id="recipe_img" accept="image/png, image/jpeg">
-        <br>
-        <input type="submit">
+        <br/><br/>
+        <button type="submit">Rezept hinzufügen</button>
 
     </form>
     </div>
 
 </div>
+<script src="{{ url_for('static', filename='js/add_recipe.js') }}"></script>
 {% endblock %}

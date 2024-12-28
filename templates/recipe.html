@@ -5,16 +5,20 @@
     <img class="recipe__mainimg" src="{{ recipe_img }}">
    
     <br/> 
-    <h1>{{ recipe_name }}</h1>
+    <h1>{{ title }}</h1>
     <br/>
     <div class="recipe__accentbg">
-        <p id="preptime__p"><strong>Vorbereitung:</strong> {{ preparation_time }} Min    <strong>Zubereitung:</strong> {{ cooking_time }} Min    <strong>Portionen:</strong> {{ servings }}</p>
+        <p id="preptime__p"><strong>Vorbereitung:</strong> {{ prep_time }} Min    <strong>Zubereitung:</strong> {{ cooking_time }} Min    <strong>Portionen:</strong> {{ servings }}</p>
 
     </div>
     <br/>
     <div class="recipe__accentbg">
     <h2>Zutaten</h2>
     
+
+        <!--
+        {# 
+
         <table class="recipe__accentbg recipe__table">
         {% for key, value in ingredients.items() %}
         <tr>
@@ -23,6 +27,9 @@
         </tr>
         {% endfor %}
         </table>
+        
+        #}
+        -->
     </div>
     <br/>
     <div class="recipe__accentbg">
